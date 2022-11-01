@@ -18,6 +18,8 @@ public:
 	float GetRadius();
 	void SetRadius(float radius);
 
+	CircleShape* GetShape();
+
 	void Update() override;
 	void Render(RenderWindow& window) override;
 };

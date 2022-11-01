@@ -139,7 +139,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="ParticleEffect.cpp" />
-    <ClCompile Include="Smoke.cpp" />
+    <ClCompile Include="Shotgun.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CircleParticle.h" />
@@ -147,7 +147,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="ParticleEffect.h" />
-    <ClInclude Include="Smoke.h" />
+    <ClInclude Include="Shotgun.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

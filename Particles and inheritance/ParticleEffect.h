@@ -19,12 +19,12 @@ class ParticleEffect
 protected:
 	Vector2f position;
 	CircleParticle** particleArray;
-	int particlesAlive;
+	int particlesAlive = 0;
 	int numParticles;
 
 public:
 
-	ParticleEffect(Vector2f position, int numParticles);
+	ParticleEffect(Vector2f position);
 	~ParticleEffect();
 
 	void CreateParticles();
@@ -32,7 +32,7 @@ public:
 	int GetParticlesAlive();
 	void SetParticlesAlive(int particlesAlive);
 
-	void Update();
+	virtual void Update() = 0;
 	void Render(RenderWindow& window);
 };
 

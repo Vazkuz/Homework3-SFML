@@ -31,6 +31,11 @@ void CircleParticle::SetRadius(float radius)
 	this->radius = radius;
 }
 
+CircleShape* CircleParticle::GetShape()
+{
+	return shape;
+}
+
 void CircleParticle::Update() {
 	Particle::Update();
 	shape->setPosition(GetPosition());

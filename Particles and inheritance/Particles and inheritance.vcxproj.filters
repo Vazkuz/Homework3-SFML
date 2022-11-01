@@ -33,7 +33,7 @@
     <ClCompile Include="Firework.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Smoke.cpp">
+    <ClCompile Include="Shotgun.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,7 +53,7 @@
     <ClInclude Include="Firework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Smoke.h">
+    <ClInclude Include="Shotgun.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

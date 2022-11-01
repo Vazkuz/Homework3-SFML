@@ -1,7 +1,7 @@
 #include "Game.h"
 #include "Particle.h"
 #include "Firework.h"
-#include "Smoke.h"
+#include "Shotgun.h"
 
 using namespace std;
 using namespace gm;
@@ -48,7 +48,7 @@ void Game::handleInput(sf::RenderWindow& window) {
 				pEffect = new Firework(Vector2f(Mouse::getPosition(window).x, Mouse::getPosition(window).y), 100);
 			}
 			if (effect == effectType::T_Smoke) {
-				pEffect = new Smoke(Vector2f(Mouse::getPosition(window).x, Mouse::getPosition(window).y), 100);
+				pEffect = new Shotgun(Vector2f(Mouse::getPosition(window).x, Mouse::getPosition(window).y), 40);
 			}
 		}
 	}

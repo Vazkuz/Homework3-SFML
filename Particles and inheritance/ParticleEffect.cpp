@@ -8,11 +8,11 @@ using namespace sf;
 
 
 
-ParticleEffect::ParticleEffect(Vector2f position, int numParticles)
+ParticleEffect::ParticleEffect(Vector2f position)
 {
     this->position = position;
-    this->numParticles = numParticles;
-    particleArray = new CircleParticle* [this->numParticles];
+    //this->numParticles = numParticles;
+    //particleArray = new CircleParticle* [this->numParticles];
     //CreateParticles();
 }
 
@@ -23,21 +23,6 @@ ParticleEffect::~ParticleEffect() {
     }
     delete *particleArray;
     *particleArray = nullptr;
-}
-
-void ParticleEffect::Update() {
-    particlesAlive = 0;
-    for (int i = 0; i < numParticles; i++) {
-        if (particleArray[i]) {
-            particleArray[i]->Update();
-            particlesAlive++;
-            if (particleArray[i]->GetLifespanRemaining() <= 0) {
-                delete particleArray[i];
-                particleArray[i] = nullptr;
-                particlesAlive--;
-            }
-        }
-    }
 }
 
 void ParticleEffect::Render(RenderWindow& window) {

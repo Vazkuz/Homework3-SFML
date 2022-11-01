@@ -9,6 +9,8 @@ public:
 	Firework(Vector2f position, int numParticles);
 	~Firework();
 
+	void Update();
+
 	void CreateParticle(CircleParticle* &particle);
 };
 
