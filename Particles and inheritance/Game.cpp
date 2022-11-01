@@ -1,12 +1,20 @@
 #include "Game.h"
 #include "Particle.h"
-#include "ParticleEffect.h"
+#include "Firework.h"
+#include "Smoke.h"
 
 using namespace std;
 using namespace gm;
 using namespace sf;
 
 ParticleEffect* pEffect = nullptr;
+
+enum effectType{
+	T_Firework,
+	T_Smoke
+};
+
+effectType effect = effectType::T_Firework;
 
 Game::Game() {
 
@@ -24,13 +32,24 @@ void Game::handleInput(sf::RenderWindow& window) {
 			window.close();
 		}
 
+		if (Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+			effect = effectType::T_Firework;
+		}
+		if (Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+			effect = effectType::T_Smoke;
+		}
+
 		if (event.type == Event::MouseButtonPressed && event.mouseButton.button == Mouse::Left) {
 			if (pEffect != nullptr) {
 				delete pEffect;
 				pEffect = nullptr;
 			}
-			pEffect = new ParticleEffect(Vector2f(Mouse::getPosition(window).x, Mouse::getPosition(window).y));
-			pEffect->Emit();
+			if (effect == effectType::T_Firework) {
+				pEffect = new Firework(Vector2f(Mouse::getPosition(window).x, Mouse::getPosition(window).y), 100);
+			}
+			if (effect == effectType::T_Smoke) {
+				pEffect = new Smoke(Vector2f(Mouse::getPosition(window).x, Mouse::getPosition(window).y), 100);
+			}
 		}
 	}
 }
@@ -38,7 +57,8 @@ void Game::handleInput(sf::RenderWindow& window) {
 void Game::update(sf::RenderWindow& window) {
 	if (pEffect) {
 		pEffect->Update();
-		if (pEffect->particlesAlive <= 0) {
+		if (pEffect->GetParticlesAlive() <= 0) {
+			delete pEffect;
 			pEffect = nullptr;
 		}
 	}

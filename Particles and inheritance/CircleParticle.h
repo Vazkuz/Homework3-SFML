@@ -11,6 +11,7 @@ private:
 	float radius;
 
 public:
+	//CircleParticle();
 	CircleParticle(float radius, Vector2f position, float lifespan);
 	~CircleParticle();
 

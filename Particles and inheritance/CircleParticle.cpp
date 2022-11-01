@@ -1,5 +1,13 @@
 #include "CircleParticle.h"
 
+//CircleParticle::CircleParticle() 
+//	: Particle(Vector2f(0, 0), 0)
+//{
+//	shape = new CircleShape();
+//	this->radius = 0;
+//	shape->setRadius(radius);
+//	shape->setPosition(Vector2f(0,0));
+//}
 CircleParticle::CircleParticle(float radius, Vector2f position, float lifespan)
 	: Particle(position, lifespan)
 {

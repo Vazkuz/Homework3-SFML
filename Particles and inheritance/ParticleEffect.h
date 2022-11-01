@@ -8,24 +8,29 @@
 #include <SFML/System.hpp>
 #include <SFML/OpenGL.hpp>
 #include <SFML/Main.hpp>
-//#include <iostream>
+
+#include "CircleParticle.h"
+#include <iostream>
 
 using namespace sf;
 
 class ParticleEffect
 {
+protected:
+	Vector2f position;
+	CircleParticle** particleArray;
+	int particlesAlive;
+	int numParticles;
+
 public:
 
-	Vector2f position;
-
-	int particlesAlive;
-
-	ParticleEffect(Vector2f position);
+	ParticleEffect(Vector2f position, int numParticles);
 	~ParticleEffect();
 
 	void CreateParticles();
-	//virtual void CreateParticle() = 0;
-	virtual void Emit();
+	virtual void CreateParticle(CircleParticle* &particle) = 0;
+	int GetParticlesAlive();
+	void SetParticlesAlive(int particlesAlive);
 
 	void Update();
 	void Render(RenderWindow& window);

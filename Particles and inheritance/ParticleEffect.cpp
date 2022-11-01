@@ -1,24 +1,23 @@
-#include "Particle.h"
-#include "CircleParticle.h"
-
 #include "ParticleEffect.h"
 
 using namespace sf;
 
 // Global Variables
-const int ARRAY_LENGTH = 40;
-CircleParticle* particleArray[ARRAY_LENGTH];
+//const int ARRAY_LENGTH = 40;
+//CircleParticle* particleArray[ARRAY_LENGTH];
 
 
 
-ParticleEffect::ParticleEffect(Vector2f position)
+ParticleEffect::ParticleEffect(Vector2f position, int numParticles)
 {
     this->position = position;
-    CreateParticles();
+    this->numParticles = numParticles;
+    particleArray = new CircleParticle* [this->numParticles];
+    //CreateParticles();
 }
 
 ParticleEffect::~ParticleEffect() {
-    for (int i = 0; i < ARRAY_LENGTH; i++) {
+    for (int i = 0; i < numParticles; i++) {
         delete particleArray[i];
         particleArray[i] = nullptr;
     }
@@ -28,7 +27,7 @@ ParticleEffect::~ParticleEffect() {
 
 void ParticleEffect::Update() {
     particlesAlive = 0;
-    for (int i = 0; i < ARRAY_LENGTH; i++) {
+    for (int i = 0; i < numParticles; i++) {
         if (particleArray[i]) {
             particleArray[i]->Update();
             particlesAlive++;
@@ -42,7 +41,7 @@ void ParticleEffect::Update() {
 }
 
 void ParticleEffect::Render(RenderWindow& window) {
-    for (int i = 0; i < ARRAY_LENGTH; i++) {
+    for (int i = 0; i < numParticles; i++) {
         if (particleArray[i]) {
             particleArray[i]->Render(window);
         }
@@ -50,20 +49,15 @@ void ParticleEffect::Render(RenderWindow& window) {
 }
 
 void ParticleEffect::CreateParticles(){
-    for (int i = 0; i < ARRAY_LENGTH; i++) {
-        *(particleArray + i) = nullptr;
+    for (int i = 0; i < numParticles; i++) {
+        CreateParticle(particleArray[i]);
     }
 }
 
-//creates a new particle for every element of the particles array
-void ParticleEffect::Emit() {
-    for (int i = 0; i < ARRAY_LENGTH; i++) {
-        int randX = ((float(rand()) / float(RAND_MAX)) * (15 + 15)) - 15;
-        int randY = ((float(rand()) / float(RAND_MAX)) * (15 + 15)) - 15;
-        float randSize = ((float(rand()) / float(RAND_MAX)) * (12 - 1)) + 1;
-        float randLifespan = ((float(rand()) / float(RAND_MAX)) * (90 + 30)) - 30;
-        particleArray[i] = new CircleParticle(randSize, this->position, randLifespan);
-        Vector2f randomVelocity = Vector2f(randX, randY);
-        particleArray[i]->SetVelocity(randomVelocity);
-    }
+int ParticleEffect::GetParticlesAlive() {
+    return particlesAlive;
+}
+
+void ParticleEffect::SetParticlesAlive(int particlesAlive) {
+    this->particlesAlive = particlesAlive;
 }

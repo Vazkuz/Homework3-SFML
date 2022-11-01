@@ -1,6 +1,5 @@
-﻿  CircleParticle.cpp
-  Game.cpp
-C:\Users\canad\OneDrive\Escritorio\Daniel M\UCSC\2022-3 Fall\Fundamentals of Game Engineering\Assignments\Homework 3\Particles and inheritance\Game.cpp(32,98): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+﻿  Game.cpp
+C:\Users\canad\OneDrive\Escritorio\Daniel M\UCSC\2022-3 Fall\Fundamentals of Game Engineering\Assignments\Homework 3\Particles and inheritance\Game.cpp(48,93): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -9,7 +8,7 @@ C:\Users\canad\OneDrive\Escritorio\Daniel M\UCSC\2022-3 Fall\Fundamentals of Gam
           [
               T=float
           ]
-C:\Users\canad\OneDrive\Escritorio\Daniel M\UCSC\2022-3 Fall\Fundamentals of Game Engineering\Assignments\Homework 3\Particles and inheritance\Game.cpp(32,68): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\canad\OneDrive\Escritorio\Daniel M\UCSC\2022-3 Fall\Fundamentals of Game Engineering\Assignments\Homework 3\Particles and inheritance\Game.cpp(48,63): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -18,19 +17,22 @@ C:\Users\canad\OneDrive\Escritorio\Daniel M\UCSC\2022-3 Fall\Fundamentals of Gam
           [
               T=float
           ]
-  Particle.cpp
-  ParticleEffect.cpp
-C:\Users\canad\OneDrive\Escritorio\Daniel M\UCSC\2022-3 Fall\Fundamentals of Game Engineering\Assignments\Homework 3\Particles and inheritance\ParticleEffect.cpp(61,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\canad\OneDrive\Escritorio\Daniel M\UCSC\2022-3 Fall\Fundamentals of Game Engineering\Assignments\Homework 3\Particles and inheritance\ParticleEffect.cpp(62,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\canad\OneDrive\Escritorio\Daniel M\UCSC\2022-3 Fall\Fundamentals of Game Engineering\Assignments\Homework 3\Particles and inheritance\ParticleEffect.cpp(66,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\canad\OneDrive\Escritorio\Daniel M\UCSC\2022-3 Fall\Fundamentals of Game Engineering\Assignments\Homework 3\Particles and inheritance\Game.cpp(51,90): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
+          [
+              T=int
+          ]
+          and
           [
               T=float
           ]
-C:\Users\canad\OneDrive\Escritorio\Daniel M\UCSC\2022-3 Fall\Fundamentals of Game Engineering\Assignments\Homework 3\Particles and inheritance\ParticleEffect.cpp(66,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\canad\OneDrive\Escritorio\Daniel M\UCSC\2022-3 Fall\Fundamentals of Game Engineering\Assignments\Homework 3\Particles and inheritance\Game.cpp(51,60): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
+          [
+              T=int
+          ]
+          and
           [
               T=float
           ]
-  Generating Code...
   Particles and inheritance.vcxproj -> C:\Users\canad\OneDrive\Escritorio\Daniel M\UCSC\2022-3 Fall\Fundamentals of Game Engineering\Assignments\Homework 3\x64\Debug\Particles and inheritance.exe

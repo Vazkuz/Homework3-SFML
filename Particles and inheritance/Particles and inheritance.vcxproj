@@ -134,16 +134,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CircleParticle.cpp" />
+    <ClCompile Include="Firework.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="ParticleEffect.cpp" />
+    <ClCompile Include="Smoke.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CircleParticle.h" />
+    <ClInclude Include="Firework.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="ParticleEffect.h" />
+    <ClInclude Include="Smoke.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
